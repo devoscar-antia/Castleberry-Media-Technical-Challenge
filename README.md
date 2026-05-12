@@ -160,16 +160,20 @@ Supabase will print the exact local URLs after `supabase start`. Common defaults
 
 ## Candidate Deliverables
 
-Please submit your solution as a pull request to this repository.
+You have read-only access to this repository.
 
-Your PR should include:
+To submit your solution:
 
-1. The code changes needed to fix the challenge.
-2. A short `SOLUTION.md` file explaining:
+1. Clone this repository.
+2. Create your own private GitHub repository with your fixed solution.
+3. Add `sebastian.serna@castleberrymedia.co` as a collaborator so we can review the code.
+4. Share the repository link with us.
+5. Include the code changes needed to fix the challenge.
+6. Include a short `SOLUTION.md` file explaining:
    - Which issues you found.
    - What you changed.
    - How you tested the app.
-3. Short demo video showing the main flow working.
+7. Include a short demo video showing the main flow working.
 
 It's not mandatory to deploy the app.
 
