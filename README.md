@@ -171,9 +171,9 @@ Your PR should include:
    - How you tested the app.
 3. Short demo video showing the main flow working.
 
-You do not need to deploy the app.
+It's not mandatory to deploy the app.
 
-The app only needs to work locally using Supabase CLI and Docker.
+The app needs to work locally using Supabase CLI and Docker.
 
 ## Use of AI Tools
 
