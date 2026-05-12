@@ -160,12 +160,30 @@ Supabase will print the exact local URLs after `supabase start`. Common defaults
 
 ## Candidate Deliverables
 
-- GitHub PR or patched branch
-- Updated README if setup instructions changed
-- List of issues found
-- Explanation of fixes
-- Screenshots or short demo video
-- Optional deployed URL
+Please submit your solution as a pull request to this repository.
+
+Your PR should include:
+
+1. The code changes needed to fix the challenge.
+2. A short `SOLUTION.md` file explaining:
+   - Which issues you found.
+   - What you changed.
+   - How you tested the app.
+3. Screenshots or a short demo video showing the main flow working.
+
+You do not need to deploy the app.
+
+The app only needs to work locally using Supabase CLI and Docker.
+
+## Use of AI Tools
+
+You may use AI tools during this challenge.
+
+However, your submission must demonstrate that you understood the codebase, the bugs, and the reasoning behind your fixes.
+
+Using AI-generated code without understanding it is not considered a strong submission.
+
+We will evaluate the reasoning behind your solution, not just whether the final code runs.
 
 ## Evaluation Criteria
 
