@@ -1,69 +1,198 @@
-# Welcome to your Lovable project
+# Technical Challenge
 
-## Project info
+This repository contains a simplified version of the product with intentional issues.
 
-**URL**: https://lovable.dev/projects/9d8a34e7-1782-4e09-96e4-d816f6ee9fa0
+Your task is to run the app locally, identify the issues, fix them, and demonstrate that the main product flow works end to end.
 
-## How can I edit this code?
+You do not need a hosted Supabase project. This challenge runs against local Supabase using Docker and the Supabase CLI.
 
-There are several ways of editing your application.
+## Product Areas
 
-**Use Lovable**
+You should investigate and validate these areas:
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/9d8a34e7-1782-4e09-96e4-d816f6ee9fa0) and start prompting.
+1. Onboarding and preference saving.
+2. Dashboard scoring and point redemption.
+3. Search Topics and article extraction/display.
+4. Saving selected articles.
+5. Fake API-backed post generation through a Supabase Edge Function.
+6. Generated post editing.
+7. Fake LinkedIn scheduling and scheduled preview.
+8. Simplified Profile page.
 
-Changes made via Lovable will be committed automatically to this repo.
+The app should feel like a small real product, but all data and integrations are synthetic.
 
-**Use your preferred IDE**
+## Expected Working Flow
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+By the end of your fix, a user should be able to:
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+1. Sign in as a seeded demo user.
+2. Complete onboarding and save preferences.
+3. Refresh the app without losing preferences.
+4. View the dashboard and use points safely.
+5. Search/load demo articles.
+6. Save selected articles to Supabase.
+7. Generate a post from a saved article using the fake Edge Function.
+8. Edit generated post content and see the saved result.
+9. Schedule the post locally.
+10. View a scheduled post preview with correct article context.
+11. Open the original article from the preview.
+12. View email, preferences, points, and fake LinkedIn status on Profile.
 
-Follow these steps:
+## Prerequisites
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+Install these before starting:
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+- Node.js and npm
+- Docker Desktop
+- Supabase CLI
+- Git
 
-# Step 3: Install the necessary dependencies.
-npm i
+Docker Desktop must be running before you run Supabase commands.
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+## Local Setup
+
+### macOS / Linux
+
+```bash
+npm install
+cp .env.example .env.local
+supabase start
+```
+
+After `supabase start`, copy the printed local anon key into `.env.local`:
+
+```bash
+VITE_SUPABASE_URL=http://127.0.0.1:54321
+VITE_SUPABASE_ANON_KEY=<paste local anon key here>
+```
+
+Then reset and run:
+
+```bash
+supabase db reset
+supabase functions serve
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+### Windows PowerShell
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+```powershell
+npm install
+Copy-Item .env.example .env.local
+supabase start
+```
 
-**Use GitHub Codespaces**
+After `supabase start`, copy the printed local anon key into `.env.local`:
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+```env
+VITE_SUPABASE_URL=http://127.0.0.1:54321
+VITE_SUPABASE_ANON_KEY=<paste local anon key here>
+```
 
-## What technologies are used for this project?
+Then reset and run:
 
-This project is built with .
+```powershell
+supabase db reset
+supabase functions serve
+npm run dev
+```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+If PowerShell blocks `npm`, use:
 
-## How can I deploy this project?
+```powershell
+npm.cmd run dev
+```
 
-Simply open [Lovable](https://lovable.dev/projects/9d8a34e7-1782-4e09-96e4-d816f6ee9fa0) and click on Share -> Publish.
+### Windows Command Prompt
 
-## I want to use a custom domain - is that possible?
+```bat
+npm install
+copy .env.example .env.local
+supabase start
+```
 
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+After `supabase start`, copy the printed local anon key into `.env.local`:
+
+```env
+VITE_SUPABASE_URL=http://127.0.0.1:54321
+VITE_SUPABASE_ANON_KEY=<paste local anon key here>
+```
+
+Then reset and run:
+
+```bat
+supabase db reset
+supabase functions serve
+npm run dev
+```
+
+## Synthetic Data
+
+The local database is seeded from:
+
+```txt
+supabase/seed.sql
+```
+
+Running `supabase db reset` reloads the synthetic users, profiles, article sources, articles, points, and preferences.
+
+Demo users:
+
+- `demo.a@example.test` / `Challenge123!`
+- `demo.b@example.test` / `Challenge123!`
+- `demo.c@example.test` / `Challenge123!`
+
+## Useful Local URLs
+
+Supabase will print the exact local URLs after `supabase start`. Common defaults are:
+
+- App: shown by `npm run dev`, usually `http://localhost:5173`
+- Supabase API: `http://127.0.0.1:54321`
+- Supabase Studio: `http://127.0.0.1:54323`
+
+## Notes
+
+- Do not use real API keys.
+- Do not connect to the real LinkedIn API.
+- Do not connect to a production Supabase project.
+- The post generation function is intentionally fake but should behave like a real API-backed flow.
+- The scheduling flow is fake and should only save scheduled posts locally/Supabase.
+
+## Candidate Deliverables
+
+- GitHub PR or patched branch
+- Updated README if setup instructions changed
+- List of issues found
+- Explanation of fixes
+- Screenshots or short demo video
+- Optional deployed URL
+
+## Evaluation Criteria
+
+- 20% Onboarding and preferences save correctly
+- 20% Dashboard points logic works correctly
+- 20% Article extraction/display and saving works
+- 20% Fake post generation, edit, and schedule flow works
+- 10% Supabase/Auth/RLS/Edge Function understanding
+- 10% Code quality, debugging explanation, and setup clarity
+
+Bonus:
+
+- Clean error handling
+- Good loading states
+- Clear database structure
+- Good comments explaining fake API behavior
+- Optional Capacitor/mobile verification
+
+## Security Rules
+
+Before submitting, verify:
+
+- No real secrets are committed
+- No `.env` files are committed
+- No production Supabase URL is included
+- No service role key exists
+- No real user/customer data exists
+- No real LinkedIn OAuth flow is active
+- No paid API key is required
+- No private internal assets remain
