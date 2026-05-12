@@ -169,7 +169,7 @@ Your PR should include:
    - Which issues you found.
    - What you changed.
    - How you tested the app.
-3. Screenshots or a short demo video showing the main flow working.
+3. Short demo video showing the main flow working.
 
 You do not need to deploy the app.
 
