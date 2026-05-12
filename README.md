@@ -166,7 +166,7 @@ To submit your solution:
 
 1. Clone this repository.
 2. Create your own private GitHub repository with your fixed solution.
-3. Add `sebastian.serna@castleberrymedia.co` as a collaborator so we can review the code.
+3. Add `sebastian.serna@castleberrymedia.co` and `david.romero@castleberrymedia.co` as a collaborator so we can review the code.
 4. Share the repository link with us.
 5. Include the code changes needed to fix the challenge.
 6. Include a short `SOLUTION.md` file explaining:
