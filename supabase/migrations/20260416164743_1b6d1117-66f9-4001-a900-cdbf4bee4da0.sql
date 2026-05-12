@@ -1,0 +1,1 @@
+DELETE FROM articles WHERE id IN ('390eaac0-ca7f-4019-a999-23147bf42364','561fab6a-39ad-4027-afca-cc65f0a00f38','af94de17-fc4f-46fc-bbb4-cfd36de8eb32','1f490e09-57c3-4885-a6d7-57b7fd476a4b','7c652b6b-3814-4f0e-b3b6-271ac9a29f1c','7511c76c-aacc-45a4-8b46-4980af78f884','444fd699-b6b7-42e9-80d3-2bee8392214c','a8e9bd42-605b-4d23-9906-b71e43548f94');

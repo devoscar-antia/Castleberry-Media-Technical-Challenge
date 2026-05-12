@@ -1,0 +1,1 @@
+DELETE FROM public.articles WHERE sourceid IN ('3a058f13-92a6-4026-9cf6-9e8d2b78be12','3fe5cbc9-b3a7-49b5-bc54-e7bf84f04021');

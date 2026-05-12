@@ -1,0 +1,143 @@
+
+/* First add the @import directive */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Then add the Tailwind directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 40% 98%; /* Light blue-gray background */
+    --foreground: 240 10% 3.9%; /* Soft-Black */
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+
+    /* Primary: Cyan Blue */
+    --primary: 198 100% 41%; 
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary: Light Grey */
+    --secondary: 212 14% 76%;
+    --secondary-foreground: 240 5.9% 10%;
+
+    --muted: 212 14% 76%;
+    --muted-foreground: 240 3.8% 46.1%;
+
+    /* Accent: Magenta */
+    --accent: 317 100% 35%; 
+    --accent-foreground: 0 0% 100%;
+
+    /* Destructive: Magenta */
+    --destructive: 317 100% 35%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 212 14% 76%; /* Light Grey */
+    --input: 212 14% 76%;
+    --ring: 198 100% 41%; /* Cyan Blue */
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 224 71% 4%; /* Dark blue background */
+    --foreground: 212 14% 76%; /* Light Grey */
+
+    --card: 224 71% 8%; /* Darker card background */
+    --card-foreground: 212 14% 76%;
+
+    --popover: 224 71% 8%;
+    --popover-foreground: 212 14% 76%;
+
+    /* Primary: Purple in dark mode */
+    --primary: 281 50% 35%;
+    --primary-foreground: 0 0% 98%;
+
+    /* Secondary: Dark Grey */
+    --secondary: 212 11% 35%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 212 11% 35%;
+    --muted-foreground: 212 14% 76%;
+
+    /* Accent: Green in dark mode */
+    --accent: 144 100% 26%;
+    --accent-foreground: 0 0% 98%;
+
+    /* Destructive: Magenta */
+    --destructive: 317 100% 35%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 212 11% 35%; /* Dark Grey */
+    --input: 212 11% 35%;
+    --ring: 281 50% 35%; /* Purple */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    /* Mobile optimizations */
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    overscroll-behavior: none;
+  }
+  /* Add responsive font sizing */
+  html {
+    font-size: 16px;
+  }
+  @media (max-width: 768px) {
+    html {
+      font-size: 14px;
+    }
+  }
+  
+  /* SES specific styles */
+  .ses-gradient-text {
+    @apply bg-gradient-to-r from-cyan-blue to-magenta bg-clip-text text-transparent;
+  }
+  
+  .dark .ses-gradient-text {
+    @apply bg-gradient-to-r from-purple to-green bg-clip-text text-transparent;
+  }
+  
+  .ses-card {
+    @apply rounded-lg border bg-white dark:bg-soft-black shadow-md;
+  }
+  
+  .ses-container {
+    @apply bg-gray-50/50 dark:bg-soft-black/50 rounded-lg p-4 border border-light-grey/30 dark:border-dark-grey/30;
+  }
+}
+
+/* Add safe area insets support for iOS devices */
+@supports (padding: max(0px)) {
+  body {
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+  
+  .safe-area-bottom {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  
+  .pt-safe {
+    padding-top: env(safe-area-inset-top, 1rem);
+  }
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 768px) {
+  .mobile-safe-top {
+    padding-top: env(safe-area-inset-top, 1rem);
+  }
+}

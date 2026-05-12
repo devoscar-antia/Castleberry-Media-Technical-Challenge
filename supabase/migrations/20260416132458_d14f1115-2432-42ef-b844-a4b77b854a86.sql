@@ -1,0 +1,1 @@
+ALTER TABLE public.profiles ADD COLUMN your_thoughts jsonb DEFAULT NULL;

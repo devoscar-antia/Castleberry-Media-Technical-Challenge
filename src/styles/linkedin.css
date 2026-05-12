@@ -1,0 +1,156 @@
+
+:root {
+  --linkedin: #0072b1;
+  --linkedin-dark: #005e93;
+  
+  /* SES color variables - enhance visibility */
+  --ses-cyan-blue: #0091D2;
+  --ses-magenta: #B40082;
+  --ses-dark-blue: #003A70;
+  --ses-dark-grey: #505A64;
+  --ses-light-grey: #AEB8C3;
+  --ses-purple: #6E2D87;
+  --ses-green: #008732;
+  --ses-soft-black: #19191E;
+  
+  /* KOL specific colors */
+  --kol-blue: #1565c0;
+  --kol-blue-dark: #0d47a1;
+}
+
+/* LinkedIn colors */
+.bg-linkedin {
+  background-color: var(--linkedin);
+}
+
+.hover\:bg-linkedin-dark:hover {
+  background-color: var(--linkedin-dark);
+}
+
+.text-linkedin {
+  color: var(--linkedin);
+}
+
+/* Add animation to approval messages */
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* SES specific utility classes - enhanced for visibility */
+.bg-gradient-ses {
+  background: linear-gradient(135deg, var(--ses-cyan-blue), var(--ses-magenta));
+}
+
+.dark .bg-gradient-ses {
+  background: linear-gradient(135deg, var(--ses-purple), var(--ses-green));
+}
+
+.text-gradient-ses {
+  background: linear-gradient(135deg, var(--ses-cyan-blue), var(--ses-magenta));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.dark .text-gradient-ses {
+  background: linear-gradient(135deg, var(--ses-purple), var(--ses-green));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* KOL specific utility classes */
+.bg-kol-blue {
+  background-color: var(--kol-blue);
+}
+
+.dark .bg-kol-blue {
+  background-color: var(--kol-blue-dark);
+}
+
+/* Additional SES color utility classes */
+.bg-ses-cyan-blue {
+  background-color: var(--ses-cyan-blue);
+}
+
+.bg-ses-magenta {
+  background-color: var(--ses-magenta);
+}
+
+.bg-ses-dark-blue {
+  background-color: var(--ses-dark-blue);
+}
+
+.bg-ses-dark-grey {
+  background-color: var(--ses-dark-grey);
+}
+
+.bg-ses-light-grey {
+  background-color: var(--ses-light-grey);
+}
+
+.bg-ses-purple {
+  background-color: var(--ses-purple);
+}
+
+.bg-ses-green {
+  background-color: var(--ses-green);
+}
+
+.text-ses-cyan-blue {
+  color: var(--ses-cyan-blue);
+}
+
+.text-ses-magenta {
+  color: var(--ses-magenta);
+}
+
+.text-ses-dark-blue {
+  color: var(--ses-dark-blue);
+}
+
+.text-ses-dark-grey {
+  color: var(--ses-dark-grey);
+}
+
+.text-ses-light-grey {
+  color: var(--ses-light-grey);
+}
+
+.text-ses-purple {
+  color: var(--ses-purple);
+}
+
+.text-ses-green {
+  color: var(--ses-green);
+}
+
+/* Card and container backgrounds */
+.bg-ses-card-light {
+  background-color: #f8f9fa;
+  border: 1px solid var(--ses-light-grey);
+}
+
+.dark .bg-ses-card-light {
+  background-color: #2a2a30;
+  border: 1px solid var(--ses-dark-grey);
+}
+
+.ses-shadow {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.dark .ses-shadow {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}

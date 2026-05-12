@@ -1,0 +1,1 @@
+UPDATE public.app_versions SET store_url = 'https://apps.apple.com/app/id6760127788', updated_at = now() WHERE platform = 'ios';

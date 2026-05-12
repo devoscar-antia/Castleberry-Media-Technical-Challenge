@@ -1,0 +1,4 @@
+project_id = "local-challenge-project"
+
+[functions.generate-posts]
+verify_jwt = true

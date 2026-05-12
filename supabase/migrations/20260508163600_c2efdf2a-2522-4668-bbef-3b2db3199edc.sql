@@ -1,0 +1,1 @@
+UPDATE public.sources SET name = 'NASA Spaceflight' WHERE name = 'NASASpaceflight';
