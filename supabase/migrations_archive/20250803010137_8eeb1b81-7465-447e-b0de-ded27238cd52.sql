@@ -22,7 +22,7 @@ WITH CHECK (auth.uid() = user_id);
 
 -- Add push_enabled column to profiles table
 ALTER TABLE public.profiles 
-ADD COLUMN push_enabled BOOLEAN DEFAULT false;
+ADD COLUMN IF NOT EXISTS push_enabled BOOLEAN DEFAULT false;
 
 -- Create trigger for device_tokens updated_at
 CREATE TRIGGER update_device_tokens_updated_at

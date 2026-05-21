@@ -105,6 +105,19 @@ const GeneratedPosts = () => {
 
   const saveEdit = async () => {
     if (!editingPost) return;
+    const { error } = await supabase
+      .from("posts")
+      .update({ content: draft, updated_at: new Date().toISOString() })
+      .eq("id", editingPost.id);
+
+    if (error) {
+      toast({ variant: "destructive", title: "Save failed", description: error.message });
+      return;
+    }
+
+    setPosts((prev) =>
+      prev.map((p) => (p.id === editingPost.id ? { ...p, content: draft } : p))
+    );
     setEditingPost(null);
     toast({ title: "Changes saved", description: "Your edit has been saved." });
   };
@@ -204,7 +217,7 @@ const GeneratedPosts = () => {
               <CardContent className="space-y-3">
                 {scheduled.length === 0 && <p className="text-sm text-muted-foreground">No scheduled posts yet.</p>}
                 {scheduled.map((post) => {
-                  const imageUrl = (post.articles as any)?.image_url;
+                  const imageUrl = post.articles?.imageurl;
                   return (
                     <div key={post.id} className="border rounded-md overflow-hidden">
                       {imageUrl ? (

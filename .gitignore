@@ -16,6 +16,11 @@ dist-ssr
 SOLUTIONS.md
 *.local
 
+# Supabase local
+supabase/.temp/
+supabase/.branches/
+supabase-start.log
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
@@ -26,5 +31,4 @@ SOLUTIONS.md
 *.njsproj
 *.sln
 *.sw?
-ios/App.xcworkspace/
 ios/App.xcworkspace/

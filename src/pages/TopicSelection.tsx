@@ -22,8 +22,8 @@ type ArticleRow = {
   sources?: { name?: string | null } | null;
 };
 
-const brokenExtractTitle = (_article: ArticleRow, index: number) => {
-  return `Article ${index + 1}`;
+const extractTitle = (article: ArticleRow) => {
+  return article.title;
 };
 
 const TopicSelection = () => {
@@ -130,10 +130,10 @@ const TopicSelection = () => {
         <div className="text-center text-muted-foreground py-12">Loading articles...</div>
       ) : (
         <div className="space-y-3">
-          {visibleArticles.map((article, index) => {
+          {visibleArticles.map((article) => {
             const checked = selectedIds.has(article.id);
             const saved = savedIds.has(article.id);
-            const displayTitle = brokenExtractTitle(article, index);
+            const displayTitle = extractTitle(article);
 
             return (
               <Card key={article.id} className={checked ? "border-primary" : ""}>
